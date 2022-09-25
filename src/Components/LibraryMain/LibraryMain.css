@@ -50,6 +50,7 @@
     background-color: rgb(0 255 28 / 40%);
     color: white;
     font-size: 20px;
+    font-family: "Ringbearer"
 }
 
 @media only screen and (max-width: 740px) {
@@ -123,7 +124,7 @@
 
     .library-main {
         width: 90%;
-        height: 98%;
+        height: 94%;
         text-align: center;
         overflow: auto;
         color: white;
@@ -144,11 +145,11 @@
     }
 
     .play-game-link {
-        margin-top: 170vh;
-        /* margin-left: 0%; */
+        margin-top: 163vh;
     }
 
     .play-button {
-        width: 60px;
+        width: 130px;
+        height: 50px;
     }
 }
