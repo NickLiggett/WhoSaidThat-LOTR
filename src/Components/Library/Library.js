@@ -39,7 +39,7 @@ const Library = ({ characters }) => {
         <div className="library">
             <div className="library-body">
                 <CharacterList characters={characters} setName={setName} setQuotes={setQuotes}/>
-                <Route path="/library" render={({ match }) => <LibraryMain name={name} theCharacters={theCharacters} quotes={quotes}/>}/>
+                <Route path="/WhoSaidThat-LOTR/library" render={({ match }) => <LibraryMain name={name} theCharacters={theCharacters} quotes={quotes}/>}/>
             </div>
             
         </div>
