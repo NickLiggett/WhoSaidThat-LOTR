@@ -1,5 +1,4 @@
 export const fetchCharacters = () => {
-    console.log('fetch')
     return fetch("https://the-one-api.dev/v2/character", {
         headers: {
             "Accept": "application/json",
@@ -10,7 +9,6 @@ export const fetchCharacters = () => {
 }
 
 export const fetchQuotes = (id) => {
-    console.log('fetch')
     return fetch(`https://the-one-api.dev/v2/character/${id}/quote`, {
             headers: {
               "Accept": "application/json",
@@ -21,7 +19,6 @@ export const fetchQuotes = (id) => {
 }
 
 export const fetchAllQuotes = () => {
-    console.log('fetch')
     return fetch("https://the-one-api.dev/v2/quote", {
         headers: {
           "Accept": "application/json",

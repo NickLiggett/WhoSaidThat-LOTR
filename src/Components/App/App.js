@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom"
 import HomePage from "../HomePage/HomePage"
 import Game from "../Game/Game"
 import Library from "../Library/Library"
+import { ErrorPage } from "../ErrorPage/ErrorPage"
 import { fetchCharacters, fetchAllQuotes } from "../../apiCalls"
 import { getCharactersWithLines } from "../../util.js"
 
@@ -31,6 +32,7 @@ export function App() {
         <Route exact path="/WhoSaidThat-LOTR/" render={() => <HomePage />}/>
         <Route exact path="/WhoSaidThat-LOTR/game" render={() => <Game />}/>
         <Route exact path="/WhoSaidThat-LOTR/library" render={() => <Library characters={characters}/>}/>
+        <Route exact path="/WhoSaidThat-LOTR/*" render={() => <ErrorPage />}/>      
       </Switch>
     </main>
   );
