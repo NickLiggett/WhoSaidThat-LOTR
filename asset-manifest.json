@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/WhoSaidThat-LOTR/static/css/main.d2c2825f.css",
+    "main.js": "/WhoSaidThat-LOTR/static/js/main.6d2214d8.js",
+    "static/media/ring-background.jpeg": "/WhoSaidThat-LOTR/static/media/ring-background.027bd68ac8b1dec8ca6d.jpeg",
+    "static/media/Ringbearer.ttf": "/WhoSaidThat-LOTR/static/media/Ringbearer.81688da96bd2ba917e09.ttf",
+    "index.html": "/WhoSaidThat-LOTR/index.html",
+    "main.d2c2825f.css.map": "/WhoSaidThat-LOTR/static/css/main.d2c2825f.css.map",
+    "main.6d2214d8.js.map": "/WhoSaidThat-LOTR/static/js/main.6d2214d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2c2825f.css",
+    "static/js/main.6d2214d8.js"
+  ]
+}
