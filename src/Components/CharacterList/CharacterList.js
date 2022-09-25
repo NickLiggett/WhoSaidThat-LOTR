@@ -16,11 +16,11 @@ const CharacterList = ({ characters, setName, setQuotes }) => {
             list.push(char)
         }
         return list
-    }, [])
+    }, []).sort((a, b) => a.name.charCodeAt(0) - b.name.charCodeAt(0))
 
     const charList = noDupes.map(char => {
         return (
-            <Link to="/WhoSaidThat-LOTR/library"  key={char._id}>
+            <Link to="/WhoSaidThat-LOTR/library"  key={char._id} id={char.name}>
                 <button id={char.name} className="character-name" onClick={() => quoteHandler(char)}>
                     {char.name}
                 </button>
