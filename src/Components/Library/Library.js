@@ -4,6 +4,8 @@ import { Route, Link } from "react-router-dom"
 import CharacterList from "../CharacterList/CharacterList"
 import LibraryMain from "../LibraryMain/LibraryMain"
 import { fetchQuotes, fetchCharacters, fetchAllQuotes } from "../../apiCalls"
+import { getCharactersWithLines } from "../../util.js"
+
 
 const Library = ({ characters }) => {
 
@@ -20,15 +22,7 @@ const Library = ({ characters }) => {
         .then(() => {
           fetchAllQuotes()
           .then(data => {
-            let charsWithLines = chars.reduce((list, char) => {
-              data.docs.forEach(doc => {
-                if (char._id === doc.character) {
-                  list.push(char)
-                }
-              })
-              return list
-            }, [])
-            setCharacters(charsWithLines)
+            setCharacters(getCharactersWithLines(chars, data))
             
         })
         .then(() => {

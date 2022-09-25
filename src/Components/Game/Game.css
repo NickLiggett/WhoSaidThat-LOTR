@@ -33,7 +33,7 @@
 
 .choice-button {
     margin: 4%;
-    background-color: rgb(0, 0, 0, 0.4);
+    background-color: rgb(0, 0, 0, 0.7);
     color: white;
     border-radius: 0%;
     width: 350px;
@@ -77,6 +77,7 @@
 @media only screen and (max-width: 740px) {
     .study-hall-link {
         margin-top: 42%;
+        margin-left: 75%;
     }
 
     .study-hall-button {
@@ -87,35 +88,39 @@
 
     .quote-question {
         padding: 10px;
-        margin: 1%;
+        margin: 3%;
+        width: 97%;
         font-size: 20px;
-        background-color: rgb(0, 0, 0, 0.4);
+        background-color: rgb(0, 0, 0, 0.7);
     }
 
     .choices {
-        margin-top: 20%;
+        margin-top: 25%;
     }
 
     .choice-button {
         margin: 2%;
-        width: 180px;
+        height: 30px;
+        width: 260px;
         font-size: 15px;
-    }
+}
 
-    .title {
-        font-size: 20px;
-        margin-top: 15%;
-    }
-  }
+.title {
+    font-size: 20px;
+    margin-top: 20%;
+}
+}
+  
 
   @media only screen and (max-width: 360px) {
     .study-hall-link {
-        margin-top: 40vh;
-        
+        margin-top: 90vh;
+        margin-left: 50%;
+        margin-right: 50%;
     }
 
     .study-hall-button {
-        background-color: rgb(255, 255, 255, .7);
+        background-color: rgb(0, 0, 0, .7);
         border-radius: 5%;
         width: 30vw;
         height: 4vh;
@@ -123,15 +128,19 @@
 
     .title {
         font-size: 30px;
-        margin-top: 20%;
+        margin-top: 70%;
     }
 
     .quote-question {
         text-align: center;
         padding: 10px;
-        margin-top: 15%;
+        margin-top: 5%;
         font-size: 20px;
         background-color: rgb(0, 0, 0, 0.4);
+    }
+
+    .choices {
+        margin-top: 85%;
     }
 
     .choice-button {

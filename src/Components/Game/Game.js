@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import "./Game.css"
 import { Link } from "react-router-dom"
 import { fetchAllQuotes, fetchCharacters } from "../../apiCalls"
+import { getCharactersWithLines } from "../../util.js"
 
 const Game = () => {
     
@@ -20,7 +21,7 @@ const Game = () => {
         } else {
             setReply("Maybe next time...")
         }
-        let chars           // <---- start of function import from util.js
+        let chars
         fetchCharacters()
         .then(data => {
             chars = data.docs
@@ -29,29 +30,20 @@ const Game = () => {
             fetchAllQuotes()
             .then(data => {
                 setQuotes(data.docs)
-                let charsWithLines = chars.reduce((list, char) => {
-                    data.docs.forEach(doc => {
-                        if (char._id === doc.character) {
-                            list.push(char)
-                        }
-                    })
-                    return list
-                }, [])
-                setupGame(data.docs, charsWithLines)
-                setCharacters(charsWithLines)
+                setupGame(data.docs, getCharactersWithLines(chars, data))
+                setCharacters(getCharactersWithLines(chars, data))
             })
-        })                      // <---- end of function
+        })
         setTimeout(() => {
         setAnswered(false)
     }, 1500);
     }
     
-    const setupGame = (data, chars) => {
-        let quote = data[Math.floor(Math.random() * data.length)]
+    const setupGame = (quotes, chars) => {
+        let quote = quotes[Math.floor(Math.random() * quotes.length)]
         setTheQuote(quote)
         let correctAnswer = chars.find(char => char._id === quote.character)
         setAnswer(correctAnswer.name)
-        console.log(correctAnswer.name)
         let threeWrongChoices = []
         let randomChoice = () => {
             let randomName = chars[Math.floor(Math.random() * chars.length)].name
@@ -60,7 +52,7 @@ const Game = () => {
             threeWrongChoices.push(randomName)
             }
         }
-        while(threeWrongChoices.length < 3) {
+        while (threeWrongChoices.length < 3) {
         randomChoice()
         }
         setChoices([correctAnswer.name, ...threeWrongChoices ])

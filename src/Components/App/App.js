@@ -7,15 +7,9 @@ import Library from "../Library/Library"
 import { fetchCharacters, fetchAllQuotes } from "../../apiCalls"
 import { getCharactersWithLines } from "../../util.js"
 
-console.log(getCharactersWithLines())
-
 export function App() {
 
   const [characters, setCharacters] = useState([])
-  
-  const stateSetter = (data) => {
-    setCharacters(data)
-  }
   
   useEffect(() => {
     let chars
@@ -26,15 +20,7 @@ export function App() {
     .then(() => {
       fetchAllQuotes()
       .then(data => {
-        let charsWithLines = chars.reduce((list, char) => {
-          data.docs.forEach(doc => {
-            if (char._id === doc.character) {
-              list.push(char)
-            }
-          })
-          return list
-        }, [])
-        stateSetter(charsWithLines)
+        setCharacters(getCharactersWithLines(chars, data))
       })
     })
   }, [])

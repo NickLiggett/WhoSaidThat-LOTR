@@ -23,9 +23,8 @@ const LibraryMain = ({ name, quotes, theCharacters }) => {
     return (quotes) ? (
         <div className="library-main">
             {(name) ? <div className="library-main-header">
-                <img src="../../gondor-tree.png"/>
                 <h2 className="library-main-title">{name}</h2>
-                <Link to="/game"><button className="play-button">Play</button></Link>
+                <Link to="/game" className="play-game-link"><button className="play-button">Play</button></Link>
                 </div> : <p>Big-Hitter Pics</p>}
             <div className="quote-wrapper">{quotations}</div>
         </div>

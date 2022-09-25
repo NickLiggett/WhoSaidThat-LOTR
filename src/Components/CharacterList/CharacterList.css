@@ -1,6 +1,6 @@
 .character-list {
     border-style: solid;
-    border-color: white;
+    border-color: black;
     width: 30%;
     height: 90%;
     align-self: center;
@@ -9,6 +9,7 @@
 
 .character-name {
     border-bottom: solid;
+    border-color: black;
     padding: 5px;
     font-size: 3vh;
     font-family: cursive;
@@ -25,38 +26,20 @@
 
 @media only screen and (max-width: 740px) {
 .character-list {
-    border-style: solid;
     width: 40%;
-    height: 99%;
-    overflow: auto;
 }
 
 .character-name {
-    border-bottom: solid;
-    padding: 5px;
     font-size: 5vh;
-    font-family: cursive;
-    font-weight: bold;
-    background-color: rgb(0, 0, 0, 0.4);
-    width: 100%;
 }
 }
 
 @media only screen and (max-width: 360px) {
     .character-list {
-        border-style: solid;
         width: 50%;
-        height: 99%;
-        overflow: auto;
     }
     
     .character-name {
-        border-bottom: solid;
-        border-color: grey;
-        padding: 5px;
         font-size: 20px;
-        font-family: cursive;
-        font-weight: bold;
-        color: white;
     }
 }
