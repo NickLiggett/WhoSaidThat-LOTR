@@ -116,7 +116,7 @@
 
   @media only screen and (max-width: 360px) {
     .study-hall-link {
-        margin-top: 90vh;
+        margin-top: 80vh;
         margin-left: 50%;
         margin-right: 50%;
     }
@@ -146,7 +146,7 @@
     }
 
     .choice-button {
-        margin: 15%;
+        margin: 10%;
         width: 250px;
         font-size: 20px;
     }
