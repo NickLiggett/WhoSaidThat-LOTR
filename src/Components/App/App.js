@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from "react"
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import HomePage from "../HomePage/HomePage"
 import Game from "../Game/Game"
 import Library from "../Library/Library"
@@ -27,9 +27,11 @@ export function App() {
 
   return (
     <main>
-      <Route exact path="/WhoSaidThat-LOTR/" render={() => <HomePage />}/>
-      <Route exact path="/WhoSaidThat-LOTR/game" render={() => <Game />}/>
-      <Route exact path="/WhoSaidThat-LOTR/library" render={() => <Library characters={characters}/>}/>
+      <Switch>
+        <Route exact path="/WhoSaidThat-LOTR/" render={() => <HomePage />}/>
+        <Route exact path="/WhoSaidThat-LOTR/game" render={() => <Game />}/>
+        <Route exact path="/WhoSaidThat-LOTR/library" render={() => <Library characters={characters}/>}/>
+      </Switch>
     </main>
   );
 }
