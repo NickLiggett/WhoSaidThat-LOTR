@@ -40,10 +40,13 @@ const Game = () => {
     }
     
     const setupGame = (quotes, chars) => {
+
         let quote = quotes[Math.floor(Math.random() * quotes.length)]
         setTheQuote(quote)
+
         let correctAnswer = chars.find(char => char._id === quote.character)
         setAnswer(correctAnswer.name)
+
         let threeWrongChoices = []
         let randomChoice = () => {
             let randomName = chars[Math.floor(Math.random() * chars.length)].name
@@ -52,9 +55,11 @@ const Game = () => {
             threeWrongChoices.push(randomName)
             }
         }
+
         while (threeWrongChoices.length < 3) {
         randomChoice()
         }
+
         setChoices([correctAnswer.name, ...threeWrongChoices ])
     }
 
@@ -68,16 +73,8 @@ const Game = () => {
           fetchAllQuotes()
           .then(data => {
             setQuotes(data.docs)
-            let charsWithLines = chars.reduce((list, char) => {
-                data.docs.forEach(doc => {
-                    if (char._id === doc.character) {
-                        list.push(char)
-                    }
-                })
-                return list
-            }, [])
-            setupGame(data.docs, charsWithLines)
-            setCharacters(charsWithLines)
+            setupGame(data.docs, getCharactersWithLines(chars, data))
+            setCharacters(getCharactersWithLines(chars, data))
           })
         })
       }, [])
@@ -93,7 +90,6 @@ const Game = () => {
                         </button>
             })
         }
-
 
     return (characters && quotes && choices) ? (
         (!answered) ? <div className="game">
