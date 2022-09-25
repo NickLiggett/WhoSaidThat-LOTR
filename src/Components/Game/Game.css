@@ -1,0 +1,145 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../ring-background.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.quote-question {
+    text-align: center;
+    padding: 20px;
+    margin-top: 5%;
+    font-size: 35px;
+    background-color: rgb(0, 0, 0, 0.4);
+    width: 80%;
+}
+
+.choices {
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    height: 10vh;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 25%;
+}
+
+.choice-button {
+    margin: 4%;
+    background-color: rgb(0, 0, 0, 0.4);
+    color: white;
+    border-radius: 0%;
+    width: 350px;
+    font-size: 30px;
+    font-family: "Ringbearer";
+}
+
+.choice-button:hover, .study-hall-button:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.study-hall-link {
+    margin-top: 60%;
+    position: fixed;
+}
+
+.study-hall-button {
+    background-color: rgb(0 0 0 / 70%);
+    border-radius: 5%;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+}
+
+.title, .loading-game, .reply, .quote-question {
+    font-family: "Ringbearer"
+}
+
+.title {
+    font-size: 30px;
+    margin-top: 20%;
+    position: fixed;
+}
+
+.reply {
+    margin-top: 45vh;
+}
+
+@media only screen and (max-width: 740px) {
+    .study-hall-link {
+        margin-top: 42%;
+    }
+
+    .study-hall-button {
+        background-color: rgb(0, 0, 0, .7);
+        border-radius: 5%;
+        width: 150px;
+    }
+
+    .quote-question {
+        padding: 10px;
+        margin: 1%;
+        font-size: 20px;
+        background-color: rgb(0, 0, 0, 0.4);
+    }
+
+    .choices {
+        margin-top: 20%;
+    }
+
+    .choice-button {
+        margin: 2%;
+        width: 180px;
+        font-size: 15px;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-top: 15%;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .study-hall-link {
+        margin-top: 40vh;
+        
+    }
+
+    .study-hall-button {
+        background-color: rgb(255, 255, 255, .7);
+        border-radius: 5%;
+        width: 30vw;
+        height: 4vh;
+    }
+
+    .title {
+        font-size: 30px;
+        margin-top: 20%;
+    }
+
+    .quote-question {
+        text-align: center;
+        padding: 10px;
+        margin-top: 15%;
+        font-size: 20px;
+        background-color: rgb(0, 0, 0, 0.4);
+    }
+
+    .choice-button {
+        margin: 15%;
+        width: 250px;
+        font-size: 20px;
+    }
+  }
+
+  
+
