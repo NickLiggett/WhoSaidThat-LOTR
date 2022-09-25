@@ -12,7 +12,8 @@
 Check out the app [here](https://nickliggett.github.io/WhoSaidThat-LOTR/)
 
 ## Application in Action
-
+![Playing the Game](https://github.com/NickLiggett/WhoSaidThat-LOTR/blob/6a33e281229a96146429e41fb51cd6ac83fa0093/GIFS/2022-09-25%2014.36.53.gif)
+![Going to Study Hall]()
 
 ## Technologies
   - React
