@@ -7,7 +7,7 @@ import { fetchQuotes, fetchCharacters, fetchAllQuotes } from "../../apiCalls"
 import { getCharactersWithLines } from "../../util.js"
 
 
-const Library = ({ characters }) => {
+const Library = ({ characters, addToFavorites }) => {
 
     const [name, setName] = useState('Aragorn II Elessar')
     const [quotes, setQuotes] = useState(null)
@@ -39,7 +39,7 @@ const Library = ({ characters }) => {
         <div className="library">
             <div className="library-body">
                 <CharacterList characters={characters} setName={setName} setQuotes={setQuotes}/>
-                <Route path="/WhoSaidThat-LOTR/library" render={({ match }) => <LibraryMain name={name} theCharacters={theCharacters} quotes={quotes}/>}/>
+                <Route path="/WhoSaidThat-LOTR/library" render={() => <LibraryMain name={name} theCharacters={theCharacters} quotes={quotes} addToFavorites={addToFavorites}/>}/>
             </div>
             
         </div>
