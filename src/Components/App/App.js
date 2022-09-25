@@ -27,7 +27,7 @@ export function App() {
 
   return (
     <main>
-      <Route exact path="/WhoSaidThat-LOTR/" render={() => <HomePage />}/>
+      <Route exact path="/showcase-project/" render={() => <HomePage />}/>
       <Route exact path="/game" render={() => <Game />}/>
       <Route path="/library" render={() => <Library characters={characters}/>}/>
     </main>
