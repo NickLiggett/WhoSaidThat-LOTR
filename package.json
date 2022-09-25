@@ -1,4 +1,5 @@
 {
+  "homepage": "http://nickliggett.github.io/WhoSaidThat-LOTR",
   "name": "showcase-project",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +14,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "cypress": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^10.8.0"
+    "cypress": "^10.8.0",
+    "gh-pages": "^4.0.0"
   }
 }
