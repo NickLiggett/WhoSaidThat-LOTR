@@ -102,7 +102,7 @@ const Game = () => {
             <div className="choices">
                 {options}
             </div>
-            <Link to="/library" className="study-hall-link"><button className="study-hall-button">Study Hall</button></Link>
+            <Link to="/WhoSaidThat-LOTR/library" className="study-hall-link"><button className="study-hall-button">Study Hall</button></Link>
         </div> : <div className="game"><h1 className="reply">{reply}</h1></div>
     ) : <div className="game"><h1 className="loading">Forging the ring...</h1></div>
 }

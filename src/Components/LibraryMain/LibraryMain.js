@@ -24,7 +24,7 @@ const LibraryMain = ({ name, quotes, theCharacters }) => {
         <div className="library-main">
             {(name) ? <div className="library-main-header">
                 <h2 className="library-main-title">{name}</h2>
-                <Link to="/game" className="play-game-link"><button className="play-button">Play</button></Link>
+                <Link to="/WhoSaidThat-LOTR/game" className="play-game-link"><button className="play-button">Play</button></Link>
                 </div> : <p>Big-Hitter Pics</p>}
             <div className="quote-wrapper">{quotations}</div>
         </div>
