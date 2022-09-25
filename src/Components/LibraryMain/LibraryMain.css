@@ -42,6 +42,7 @@
 .play-game-link {
     margin-left: 10%;
     margin-top: 7%;
+    
 }
 
 .play-button {
@@ -146,6 +147,8 @@
 
     .play-game-link {
         margin-top: 163vh;
+        width: 130px;
+        height: 50px;
     }
 
     .play-button {
