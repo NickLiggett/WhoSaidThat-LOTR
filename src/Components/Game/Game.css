@@ -16,7 +16,7 @@
     text-align: center;
     padding: 20px;
     margin-top: 5%;
-    font-size: 35px;
+    font-size: 30px;
     background-color: rgb(0, 0, 0, 0.4);
     width: 80%;
 }
@@ -28,26 +28,28 @@
     height: 10vh;
     flex-direction: column;
     position: fixed;
-    margin-top: 25%;
+    margin-top: 27%;
 }
 
 .choice-button {
-    margin: 4%;
+    margin: 3%;
     background-color: rgb(0, 0, 0, 0.7);
     color: white;
     border-radius: 0%;
     width: 350px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: "Ringbearer";
 }
 
 .choice-button:hover, .study-hall-button:hover {
     background-color: rgb(255, 255, 255, 0.5);
+    color: black;
     cursor: pointer;
 }
 
 .study-hall-link {
-    margin-top: 60%;
+    margin-top: 48%;
+    margin-left: 84%;
     position: fixed;
 }
 
@@ -66,7 +68,7 @@
 
 .title {
     font-size: 30px;
-    margin-top: 20%;
+    margin-top: 22%;
     position: fixed;
 }
 

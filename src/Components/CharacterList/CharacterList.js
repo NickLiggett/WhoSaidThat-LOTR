@@ -20,7 +20,7 @@ const CharacterList = ({ characters, setName, setQuotes }) => {
 
     const charList = noDupes.map(char => {
         return (
-            <Link to="/library"  key={char._id}>
+            <Link to="/WhoSaidThat-LOTR/library"  key={char._id}>
                 <button id={char.name} className="character-name" onClick={() => quoteHandler(char)}>
                     {char.name}
                 </button>
