@@ -1,0 +1,20 @@
+{
+  "docs": [{
+    "birth": "March 1 ,2931",
+    "death": "FO 120",
+    "gender": "Male",
+    "hair": "Dark",
+    "height": "198cm (6'6\")",
+    "name": "Aragorn II Elessar",
+    "race": "Human",
+    "realm": "Reunited Kingdom,Arnor,Gondor",
+    "spouse": "Arwen",
+    "wikiUrl": "http://lotr.wikia.com//wiki/Aragorn_II_Elessar",
+    "_id": "5cd99d4bde30eff6ebccfbe6"
+  }],
+  "limit": 1000,
+  "offset": 0,
+  "page": 1,
+  "pages": 1,
+  "total": 933
+}
