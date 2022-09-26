@@ -47,7 +47,7 @@
     font-family: "Ringbearer";
 }
 
-.choice-button:hover, .study-hall-button:hover {
+.choice-button:hover, .study-hall-button:hover, .play-button:hover, .favorites-button:hover {
     background-color: rgb(255, 255, 255, 0.5);
     color: black;
     cursor: pointer;
