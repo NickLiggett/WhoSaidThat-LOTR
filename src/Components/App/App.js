@@ -34,7 +34,11 @@ export function App() {
   }
 
   const addToFavorites = (quote) => {
-    setFavoriteQuotes([...favoriteQuotes, quote])
+    let newFavs = [...favoriteQuotes]
+    if (!newFavs.includes(quote)) {
+      newFavs.push(quote)
+    }
+    setFavoriteQuotes(newFavs)
   }
 
   return (
