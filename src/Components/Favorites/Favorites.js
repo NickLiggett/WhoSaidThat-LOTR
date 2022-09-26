@@ -1,4 +1,5 @@
 import React from "react"
+import { PropTypes } from "prop-types"
 import { Link } from "react-router-dom"
 import "./Favorites.css"
 
@@ -7,9 +8,9 @@ export const Favorites = ({ favoriteQuotes, characters, unFavorite }) => {
     const favoritesList = favoriteQuotes.map(quote => {
         const quotee = characters.find(char => char._id === quote.character)
         return (
-            <div className="favorite-quote" onClick={() => unFavorite(quote)}>
+            <div className="favorite-quote" key={quote._id} onClick={() => unFavorite(quote)}>
                 <p className="quote-dialog">{quote.dialog}</p>
-                <h3 className="quotee">-{quotee.name}</h3>
+                <h3 className="quotee">- {quotee.name}</h3>
             </div>
         )
     })
@@ -27,4 +28,10 @@ export const Favorites = ({ favoriteQuotes, characters, unFavorite }) => {
             <div>{favoritesList}</div>
         </div>
     )
+}
+
+Favorites.propTypes = {
+    favoriteQuotes: PropTypes.array.isRequired,
+    characters: PropTypes.array.isRequired,
+    unFavorite: PropTypes.func.isRequired
 }

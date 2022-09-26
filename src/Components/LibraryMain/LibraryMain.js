@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
 import "./LibraryMain.css"
 import { Link } from "react-router-dom"
 import { fetchCall } from "../../apiCalls"
 
-const LibraryMain = ({ name, quotes, theCharacters, addToFavorites, favoriteQuotes }) => {
+export const LibraryMain = ({ name, quotes, theCharacters, addToFavorites, favoriteQuotes }) => {
 
     const [quoteList, setQuotes] = useState(quotes)
 
@@ -61,4 +62,10 @@ const LibraryMain = ({ name, quotes, theCharacters, addToFavorites, favoriteQuot
         </div>
 }
 
-export default LibraryMain
+LibraryMain.propTypes = {
+    name: PropTypes.string.isRequired,
+    quotes: PropTypes.array,
+    theCharacters: PropTypes.array.isRequired,
+    addToFavorites: PropTypes.func.isRequired,
+    favoriteQuotes: PropTypes.array.isRequired
+}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
 import "./CharacterList.css"
 import { Link } from "react-router-dom"
 import { fetchCall } from "../../apiCalls"
 
-const CharacterList = ({ characters, setName, setQuotes }) => {
+export const CharacterList = ({ characters, setName, setQuotes }) => {
 
     const quoteHandler = (char) => {
         setName(char.name)
@@ -35,4 +36,8 @@ const CharacterList = ({ characters, setName, setQuotes }) => {
     )
 }
 
-export default CharacterList
+CharacterList.propTypes = {
+    characters: PropTypes.array.isRequired,
+    setName: PropTypes.func.isRequired,
+    setQuotes: PropTypes.func.isRequired
+}

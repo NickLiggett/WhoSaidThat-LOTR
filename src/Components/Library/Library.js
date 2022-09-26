@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react"
+import PropTypes from "prop-types"
 import "./Library.css"
 import { Route, Link } from "react-router-dom"
-import CharacterList from "../CharacterList/CharacterList"
-import LibraryMain from "../LibraryMain/LibraryMain"
+import { CharacterList } from "../CharacterList/CharacterList"
+import { LibraryMain } from "../LibraryMain/LibraryMain"
 import { fetchCall } from "../../apiCalls"
 import { getCharactersWithLines } from "../../util.js"
 
@@ -44,4 +45,10 @@ export const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
             
         </div>
     ) : <div className="loading"><h1>Forging the Ring...</h1></div>
+}
+
+Library.propTypes = {
+  characters: PropTypes.array.isRequired,
+  addToFavorites: PropTypes.func.isRequired,
+  favoriteQuotes: PropTypes.array.isRequired
 }
