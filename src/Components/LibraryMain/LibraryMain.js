@@ -51,10 +51,10 @@ const LibraryMain = ({ name, quotes, theCharacters, addToFavorites, favoriteQuot
     ) : <div className="library-main">
             <h1>Click on a Character</h1>
             <div className="button-wrapper">
-            <Link to="/WhoSaidThat-LOTR/game" className="play-game-link">
+            <Link to="/WhoSaidThat-LOTR/game" className="pre-play-game-link">
                 <button className="play-button">Play</button>
             </Link>
-            <Link to="/WhoSaidThat-LOTR/favorites" className="favorites-link">
+            <Link to="/WhoSaidThat-LOTR/favorites" className="pre-favorites-link">
                 <button className="favorites-button">Favorites</button>
             </Link>
             </div>

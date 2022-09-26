@@ -25,8 +25,50 @@
     text-align: center;
 }
 
+.quote-dialog {
+    margin: 3%;
+    padding: 3%;
+    font-size: 25px;
+    background-color: rgb(0 0 0 / 80%);
+    text-align: center;
+    cursor: pointer;
+}
+
 .quotee {
     margin-left: 80vw;
     margin-top: -3vh;
     font-size: 30px;
+}
+
+@media only screen and (max-width: 740px) {
+    .quotee {    
+        font-size: 25px;
+        width: 45vw;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .study-hall-button {
+        height: 8vh;
+        width: 20vw;
+    }
+
+    .favorite-quote {
+        width: 100%;
+        margin-top: 10vh;
+    }
+
+    .quote-dialog {
+        font-size: 18px;
+        background-color: rgb(0 0 0 / 80%);
+        text-align: center;
+    }
+
+    .quotee {
+        margin-left: 80vw;
+        margin-top: -1vh;
+        margin-right: 10vw;
+        width: 105vw;
+        font-size: 20px;
+    }
 }

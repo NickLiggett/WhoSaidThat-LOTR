@@ -8,7 +8,7 @@ export const Favorites = ({ favoriteQuotes, characters, unFavorite }) => {
         const quotee = characters.find(char => char._id === quote.character)
         return (
             <div className="favorite-quote" onClick={() => unFavorite(quote)}>
-                <p className="quote">{quote.dialog}</p>
+                <p className="quote-dialog">{quote.dialog}</p>
                 <h3 className="quotee">-{quotee.name}</h3>
             </div>
         )
