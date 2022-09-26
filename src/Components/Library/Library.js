@@ -3,11 +3,11 @@ import "./Library.css"
 import { Route, Link } from "react-router-dom"
 import CharacterList from "../CharacterList/CharacterList"
 import LibraryMain from "../LibraryMain/LibraryMain"
-import { fetchQuotes, fetchCharacters, fetchAllQuotes } from "../../apiCalls"
+import { fetchCall } from "../../apiCalls"
 import { getCharactersWithLines } from "../../util.js"
 
 
-const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
+export const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
 
     const [name, setName] = useState('Aragorn II Elessar')
     const [quotes, setQuotes] = useState(null)
@@ -15,12 +15,12 @@ const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
     
     useEffect(() => {
         let chars
-        fetchCharacters()
+        fetchCall('character')
         .then(data => {
           chars = data.docs
         })
         .then(() => {
-          fetchAllQuotes()
+          fetchCall('quote')
           .then(data => {
             setCharacters(getCharactersWithLines(chars, data))
             
@@ -28,7 +28,7 @@ const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
         .then(() => {
             if (theCharacters) {
                 const theCharacter = theCharacters.find(char => char.name === name)
-                fetchQuotes(theCharacter._id)
+                fetchCall(`character/${theCharacter._id}/quote`)
                 .then(data => setQuotes(data.docs))
             }
           })
@@ -45,5 +45,3 @@ const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
         </div>
     ) : <div className="loading"><h1>Forging the Ring...</h1></div>
 }
-
-export default Library

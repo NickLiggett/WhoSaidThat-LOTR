@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
 import "./CharacterList.css"
 import { Link } from "react-router-dom"
-import { fetchQuotes } from "../../apiCalls"
+import { fetchCall } from "../../apiCalls"
 
 const CharacterList = ({ characters, setName, setQuotes }) => {
 
     const quoteHandler = (char) => {
         setName(char.name)
-        fetchQuotes(char._id)
+        fetchCall(`character/${char._id}/quote`)
         .then(data => setQuotes(data.docs))
     }
 

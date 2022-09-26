@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "./LibraryMain.css"
 import { Link } from "react-router-dom"
-import { fetchQuotes } from "../../apiCalls"
+import { fetchCall } from "../../apiCalls"
 
 const LibraryMain = ({ name, quotes, theCharacters, addToFavorites, favoriteQuotes }) => {
 
@@ -31,7 +31,7 @@ const LibraryMain = ({ name, quotes, theCharacters, addToFavorites, favoriteQuot
         useEffect(() => {
             if (!quoteList) {
                 let character = theCharacters.find(char => char.name === name)
-                fetchQuotes(character._id)
+                fetchCall(`character/${character._id}/quote`)
                 .then(data => setQuotes(data.docs))
             }
         })

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import "./Game.css"
 import { Link } from "react-router-dom"
-import { fetchAllQuotes, fetchCharacters } from "../../apiCalls"
+import { fetchCall } from "../../apiCalls"
 import { getCharactersWithLines } from "../../util.js"
 
-const Game = () => {
+export const Game = () => {
     
     const [characters, setCharacters] = useState(null)   
     const [quotes, setQuotes] = useState(null)
@@ -22,12 +22,12 @@ const Game = () => {
             setReply("Maybe next time...")
         }
         let chars
-        fetchCharacters()
+        fetchCall('character')
         .then(data => {
             chars = data.docs
         })
         .then(() => {
-            fetchAllQuotes()
+            fetchCall('quote')
             .then(data => {
                 setQuotes(data.docs)
                 setupGame(data.docs, getCharactersWithLines(chars, data))
@@ -65,12 +65,12 @@ const Game = () => {
 
     useEffect(() => {
         let chars
-        fetchCharacters()
+        fetchCall('character')
         .then(data => {
           chars = data.docs
         })
         .then(() => {
-          fetchAllQuotes()
+          fetchCall('quote')
           .then(data => {
             setQuotes(data.docs)
             setupGame(data.docs, getCharactersWithLines(chars, data))
@@ -102,5 +102,3 @@ const Game = () => {
         </div> : <div className="game"><h1 className="reply">{reply}</h1></div>
     ) : <div className="game"><h1 className="loading">Forging the ring...</h1></div>
 }
-
-export default Game

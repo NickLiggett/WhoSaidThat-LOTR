@@ -2,7 +2,7 @@ import React from "react"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
 
-const HomePage = () => {
+export const HomePage = () => {
     return (
         <div className="homepage">
             <h1 className="main-title">Who Said That?</h1>
@@ -14,5 +14,3 @@ const HomePage = () => {
         </div>
     )
 }
-
-export default HomePage

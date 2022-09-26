@@ -19,6 +19,7 @@ describe('User Flows', () => {
     .intercept('/WhoSaidThat-LOTR/game', {
       statusCode: 200
     })
+    .url().should('eq', 'http://localhost:3000/WhoSaidThat-LOTR/game')
     .get('.choice-button').first().click()
     .get('.reply').should('exist')
     .get('.choices').should('exist')
@@ -29,6 +30,7 @@ describe('User Flows', () => {
    .intercept('/WhoSaidThat-LOTR/library', {
     statusCode: 200
     })
+    .url().should('eq', 'http://localhost:3000/WhoSaidThat-LOTR/library')
     .get('.character-name').first().click()
     .get('.library-main-title').should('contain', 'Aragorn II Elessar')
     .get('.quote').should('exist')
@@ -39,9 +41,25 @@ describe('User Flows', () => {
    .intercept('/WhoSaidThat-LOTR/library', {
     statusCode: 200
     })
+    .url().should('eq', 'http://localhost:3000/WhoSaidThat-LOTR/library')
     .get('.character-name').first().click()
     .get('.quote').first().click()
     .get('.favorites-button').click()
+    .url().should('eq', 'http://localhost:3000/WhoSaidThat-LOTR/favorites')
     .get('.favorite-quote').should('exist')
+  })
+
+  it('Should be able to click on a favorite quote to unfavorite it', () => {
+    cy.get('#study-hall-button').click()
+   .intercept('/WhoSaidThat-LOTR/library', {
+    statusCode: 200
+    })
+    .url().should('eq', 'http://localhost:3000/WhoSaidThat-LOTR/library')
+    .get('.character-name').first().click()
+    .get('.quote').first().click()
+    .get('.favorites-button').click()
+    .url().should('eq', 'http://localhost:3000/WhoSaidThat-LOTR/favorites')
+    .get('.favorite-quote').click()
+    .get('.favorite-quote').should('not.exist')
   })
 })

@@ -1,12 +1,12 @@
 import './App.css';
 import { useEffect, useState } from "react"
 import { Route, Switch } from "react-router-dom"
-import HomePage from "../HomePage/HomePage"
-import Game from "../Game/Game"
-import Library from "../Library/Library"
+import { HomePage } from "../HomePage/HomePage"
+import { Game } from "../Game/Game"
+import { Library } from "../Library/Library"
 import { ErrorPage } from "../ErrorPage/ErrorPage"
 import { Favorites } from "../Favorites/Favorites"
-import { fetchCharacters, fetchAllQuotes } from "../../apiCalls"
+import { fetchCall } from "../../apiCalls"
 import { getCharactersWithLines } from "../../util.js"
 
 export function App() {
@@ -16,12 +16,12 @@ export function App() {
   
   useEffect(() => {
     let chars
-    fetchCharacters()
+    fetchCall('character')
     .then(data => {
       chars = data.docs
     })
     .then(() => {
-      fetchAllQuotes()
+      fetchCall('quote')
       .then(data => {
         setCharacters(getCharactersWithLines(chars, data))
       })
