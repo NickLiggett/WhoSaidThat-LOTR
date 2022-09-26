@@ -21,6 +21,10 @@
     width: -webkit-fill-available;
 }
 
+.favorite-title {
+    text-align: center;
+}
+
 .quotee {
     margin-left: 80vw;
     margin-top: -3vh;

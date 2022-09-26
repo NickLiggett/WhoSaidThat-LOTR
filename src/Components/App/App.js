@@ -28,6 +28,11 @@ export function App() {
     })
   }, [])
 
+  const unFavorite = (quote) => {
+    const newFavorites = favoriteQuotes.filter(element => element._id !== quote._id)
+    setFavoriteQuotes(newFavorites)
+  }
+
   const addToFavorites = (quote) => {
     setFavoriteQuotes([...favoriteQuotes, quote])
   }
@@ -37,8 +42,8 @@ export function App() {
       <Switch>
         <Route exact path="/WhoSaidThat-LOTR/" render={() => <HomePage />}/>
         <Route exact path="/WhoSaidThat-LOTR/game" render={() => <Game />}/>
-        <Route exact path="/WhoSaidThat-LOTR/library" render={() => <Library characters={characters} addToFavorites={addToFavorites}/>}/>
-        <Route exact path="/WhoSaidThat-LOTR/favorites" render={() => <Favorites favoriteQuotes={favoriteQuotes} characters={characters}/>}/> 
+        <Route exact path="/WhoSaidThat-LOTR/library" render={() => <Library characters={characters} addToFavorites={addToFavorites} favoriteQuotes={favoriteQuotes}/>}/>
+        <Route exact path="/WhoSaidThat-LOTR/favorites" render={() => <Favorites favoriteQuotes={favoriteQuotes} characters={characters} unFavorite={unFavorite}/>}/> 
         <Route exact path="/WhoSaidThat-LOTR/*" render={() => <ErrorPage />}/>      
       </Switch>
     </main>

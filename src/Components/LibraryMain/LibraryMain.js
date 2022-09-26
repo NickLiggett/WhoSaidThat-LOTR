@@ -3,12 +3,29 @@ import "./LibraryMain.css"
 import { Link } from "react-router-dom"
 import { fetchQuotes } from "../../apiCalls"
 
-const LibraryMain = ({ name, quotes, theCharacters, addToFavorites }) => {
+const LibraryMain = ({ name, quotes, theCharacters, addToFavorites, favoriteQuotes }) => {
 
     const [quoteList, setQuotes] = useState(quotes)
 
+    const handleClick = (event, quote) => {
+        event.target.className = 'quote-glow'
+        addToFavorites(quote)
+        setTimeout(() => {
+            event.target.className = 'quote-fav'
+        }, 400)
+    }
+        let quotations
         if (quotes) {
-            var quotations = quotes.map(quote => <div className="quote" key={quote._id} onClick={() => addToFavorites(quote)}>{quote.dialog}</div>)      
+            quotations = quotes.map(quote => {
+                return (
+                    <div className="quote" 
+                    key={quote._id}
+                    id={quote._id}
+                    onClick={(event) => handleClick(event, quote)}>
+                        {quote.dialog}
+                    </div>
+                )
+            })      
         }
 
         useEffect(() => {
@@ -23,7 +40,10 @@ const LibraryMain = ({ name, quotes, theCharacters, addToFavorites }) => {
         <div className="library-main">
             {(name) && <div className="library-main-header">
                 <Link to="/WhoSaidThat-LOTR/favorites" className="favorites-link"><button className="favorites-button">Favorites</button></Link>
-                <h2 className="library-main-title">{name}</h2>
+                <div className="title-wrapper">
+                    <h2 className="library-main-title">{name}</h2>
+                    <p>* Click a quote to favorite it.</p>
+                </div>
                 <Link to="/WhoSaidThat-LOTR/game" className="play-game-link"><button className="play-button">Play</button></Link>
                 </div>}
             <div className="quote-wrapper">{quotations}</div>
