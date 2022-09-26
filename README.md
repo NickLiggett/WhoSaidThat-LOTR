@@ -16,7 +16,8 @@ Check out the app [here](https://nickliggett.github.io/WhoSaidThat-LOTR/)
 
 ## Application in Action
 ![Playing the Game](https://github.com/NickLiggett/WhoSaidThat-LOTR/blob/7b6c9deaf446086ab8cab08625f1d04e5c0822ad/GIFS/2022-09-25%2022.17.22.gif)
-![Going to Study Hall]()
+![Going to Study Hall](https://github.com/NickLiggett/WhoSaidThat-LOTR/blob/40899d5e08472d4535dd369c781c270149d01401/GIFS/2022-09-25%2022.17.57.gif)
+![Favoriting a Quote](https://github.com/NickLiggett/WhoSaidThat-LOTR/blob/40899d5e08472d4535dd369c781c270149d01401/GIFS/2022-09-25%2022.18.26.gif)
 
 ## Technologies
   - React
@@ -50,7 +51,7 @@ Check out the app [here](https://nickliggett.github.io/WhoSaidThat-LOTR/)
   - [W3Schools](https://www.w3schools.com/)
   
 ## Contributors
-  - [[Nick Liggett](https://github.com/NickLiggett)]
+  - [Nick Liggett](https://github.com/NickLiggett)
 
 ## Project Specs
   - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html)
