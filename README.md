@@ -14,6 +14,17 @@
 ## Setup
 Check out the app [here](https://nickliggett.github.io/WhoSaidThat-LOTR/)
 
+or
+
+Copy and Paste this into your terminal (you may need to run `npm i` first)
+
+```
+git clone git@github.com:NickLiggett/WhoSaidThat-LOTR.git
+cd WhoSaidThat-LOTR
+npm start
+```
+
+
 ## Application in Action
 ![Playing the Game](https://github.com/NickLiggett/WhoSaidThat-LOTR/blob/7b6c9deaf446086ab8cab08625f1d04e5c0822ad/GIFS/2022-09-25%2022.17.22.gif)
 ![Going to Study Hall](https://github.com/NickLiggett/WhoSaidThat-LOTR/blob/40899d5e08472d4535dd369c781c270149d01401/GIFS/2022-09-25%2022.17.57.gif)
