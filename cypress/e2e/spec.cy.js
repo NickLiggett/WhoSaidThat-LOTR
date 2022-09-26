@@ -33,4 +33,15 @@ describe('User Flows', () => {
     .get('.library-main-title').should('contain', 'Aragorn II Elessar')
     .get('.quote').should('exist')
   })
+
+  it('Should be able to favorite a quote and see it on the favorites page', () => {
+    cy.get('#study-hall-button').click()
+   .intercept('/WhoSaidThat-LOTR/library', {
+    statusCode: 200
+    })
+    .get('.character-name').first().click()
+    .get('.quote').first().click()
+    .get('.favorites-button').click()
+    .get('.favorite-quote').should('exist')
+  })
 })
