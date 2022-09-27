@@ -34,11 +34,9 @@ export function App() {
   }
 
   const addToFavorites = (quote) => {
-    let newFavs = [...favoriteQuotes]
-    if (!newFavs.includes(quote)) {
-      newFavs.push(quote)
-    }
-    setFavoriteQuotes(newFavs)
+    let reverseFilter = favoriteQuotes.filter(element => element._id !== quote._id)
+    console.log(reverseFilter)
+    setFavoriteQuotes([...reverseFilter, quote])
   }
 
   return (

@@ -18,11 +18,13 @@ export const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
         let chars
         fetchCall('character')
         .then(data => {
+          console.log(data)
           chars = data.docs
         })
         .then(() => {
           fetchCall('quote')
           .then(data => {
+            console.log(data)
             setCharacters(getCharactersWithLines(chars, data))
             
         })
