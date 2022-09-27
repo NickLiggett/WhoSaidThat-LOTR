@@ -16,13 +16,17 @@ Check out the app [here](https://nickliggett.github.io/WhoSaidThat-LOTR/)
 
 or
 
-Copy and Paste this into your terminal (you may need to run `npm i` first)
+Copy and Paste this into your terminal
 
 ```
 git clone git@github.com:NickLiggett/WhoSaidThat-LOTR.git
 cd WhoSaidThat-LOTR
+npm i
 npm start
 ```
+
+* CAUTION! You will need to visit [this](https://the-one-api.dev/) website and request an API key.
+Once you have it, visit [this](https://betterprogramming.pub/how-to-hide-your-api-keys-c2b952bc07e6) website to find out how to hide you're API key if you want to push it to GitHub. 
 
 
 ## Application in Action
