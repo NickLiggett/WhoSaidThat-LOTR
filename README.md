@@ -1,7 +1,6 @@
 # Who Said That? LOTR
 
 ## Introduction
-  - This application is called "Who Said That? LOTR"
   - When the user is at the homepage, they can choose to play the quote trivia game or go to the study hall to look up a specific character's quotes from the films.
   - On the Game page, a random quote is populated and the user must select which LOTR character they think said the quote.
   - The user will be notified whether their guess was correct or not, then a new quote will appear with new choices.
@@ -25,7 +24,7 @@ npm i
 npm start
 ```
 
-* CAUTION! You will need to visit [this](https://the-one-api.dev/) website and request an API key.
+* CAUTION! If you choose the local setup, you will need to visit [this](https://the-one-api.dev/) website and request an API key.
 Once you have it, visit [this](https://betterprogramming.pub/how-to-hide-your-api-keys-c2b952bc07e6) website to find out how to hide you're API key if you want to push it to GitHub. 
 
 
