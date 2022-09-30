@@ -23,6 +23,7 @@ export function App() {
     .then(() => {
       fetchCall('quote')
       .then(data => {
+        console.log(data.docs)
         setCharacters(getCharactersWithLines(chars, data))
       })
     })
@@ -35,7 +36,6 @@ export function App() {
 
   const addToFavorites = (quote) => {
     let reverseFilter = favoriteQuotes.filter(element => element._id !== quote._id)
-    console.log(reverseFilter)
     setFavoriteQuotes([...reverseFilter, quote])
   }
 

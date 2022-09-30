@@ -18,23 +18,13 @@ export const Library = ({ characters, addToFavorites, favoriteQuotes }) => {
         let chars
         fetchCall('character')
         .then(data => {
-          console.log(data)
           chars = data.docs
         })
         .then(() => {
           fetchCall('quote')
           .then(data => {
-            console.log(data)
-            setCharacters(getCharactersWithLines(chars, data))
-            
+            setCharacters(getCharactersWithLines(chars, data)) 
         })
-        .then(() => {
-            if (theCharacters) {
-                const theCharacter = theCharacters.find(char => char.name === name)
-                fetchCall(`character/${theCharacter._id}/quote`)
-                .then(data => setQuotes(data.docs))
-            }
-          })
         })
       }, [])
 

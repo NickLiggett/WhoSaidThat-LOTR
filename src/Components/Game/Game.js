@@ -59,7 +59,6 @@ export const Game = () => {
         while (threeWrongChoices.length < 3) {
         randomChoice()
         }
-
         setChoices([correctAnswer.name, ...threeWrongChoices ])
     }
 
@@ -94,7 +93,7 @@ export const Game = () => {
     return (characters && quotes && choices) ? (
         (!answered) ? <div className="game">
             <h3 className="quote-question">{theQuote.dialog}</h3>
-            <h3 className="title">Who said that?</h3>
+            <h3 className="title">Who Said That?</h3>
             <div className="choices">
                 {options}
             </div>
